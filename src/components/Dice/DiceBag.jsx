@@ -1,12 +1,17 @@
 import { useState } from 'react'
 
 export default function DiceBag() {
-    const [value, setValue] = useState(1); // total value of dice rolled
+    const [value, setValue] = useState(1); // result of individual die roll
+    const [total, setTotal] = useState(1); // total value of dice rolled
     const [sides, setSides] = useState(6); // what kind of dice are being rolled
-    const [multiplier, setMultiplier] = useState(1); // number of dice rolled simultaneously
+    const [current, setCurrent] = useState([]); // array of currently selected dice to be rolled
     // work on 3: roll multiple dice and add up the values
 
-    console.log('value', value);
+    function handleAddDie() {
+        setCurrent([...current, `D${sides}`])
+    }
+    console.log('current', current);
+
   return (
     <div>
         <h3>Dice Selector:</h3>
@@ -22,13 +27,14 @@ export default function DiceBag() {
 
         <hr />
 
-        <button style={{ margin: 5 }} onClick={() => setMultiplier(multiplier - 1)}>Reduce dice</button>
-        <span style={{ margin: 10 }}>Number of dice: {multiplier}</span>
-        <button style={{ margin: 5 }} onClick={() => setMultiplier(multiplier + 1)}>Add dice</button>
+        <button style={{ margin: 5 }} onClick={handleAddDie}>Add D{sides}</button>
+        <button style={{ margin: 5 }} onClick={() => setCurrent([])}>Clear Selected Dice</button>
+        {/* <span style={{ margin: 10 }}>Number of dice: {multiplier}</span>
+        <button style={{ margin: 5 }} onClick={() => setMultiplier(multiplier + 1)}>Add dice</button> */}
 
         <hr />
-        
-        <button onClick={() => setValue(multiplier*Math.ceil(sides*(Math.random())))}>Roll {multiplier}D{sides}</button>
+        <span style={{ margin: 5 }}>Selected dice: {current}</span>
+        <button onClick={() => setValue(Math.ceil(sides*(Math.random())))}>Roll Selected Dice</button>
         <span style={{ margin: 10 }}>{value}</span>
     </div>
   )
