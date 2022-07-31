@@ -1,4 +1,5 @@
 import React from 'react'
+import D6 from '../../components/Dice/D6';
 
 export default function Dice() {
   return (
@@ -12,6 +13,7 @@ export default function Dice() {
           <li>and logs the last 10 die/dice and each value and total value</li>
         </ol>
       </div>
+      <D6 />
     </>  
   )
 }
