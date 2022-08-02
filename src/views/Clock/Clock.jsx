@@ -1,6 +1,7 @@
 import React from 'react'
+import Clock from '../../components/Clock/Clock'
 
-export default function Clock() {
+export default function ClockPage() {
   return (
     <>
       <div>
@@ -12,6 +13,7 @@ export default function Clock() {
           <li>and displays the name of a country in each of the timezones</li>
         </ol>
       </div>
+      <Clock />
     </>  
   )
 }
