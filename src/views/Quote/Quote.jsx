@@ -1,4 +1,5 @@
 import React from 'react'
+import QuoteGenerator from '../../components/Quote/QuoteGenerator'
 
 export default function Quote() {
   return (
@@ -12,6 +13,7 @@ export default function Quote() {
           <li>and has the quote read back to you using <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API#Speech_synthesis">this API</a></li>
         </ol>
       </div>
+      <QuoteGenerator />
     </>  
   )
 }
