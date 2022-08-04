@@ -1,4 +1,5 @@
 import React from 'react'
+import Input from '../../components/Text/Input'
 
 export default function TextInput() {
   return (
@@ -12,6 +13,7 @@ export default function TextInput() {
           <li>and allows you to replace a word with an emoji using colon syntax, like slack</li>
         </ol>
       </div>
+      <Input />
     </>  
   )
 }

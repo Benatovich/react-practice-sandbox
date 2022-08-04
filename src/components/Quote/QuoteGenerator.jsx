@@ -14,6 +14,7 @@ export default function QuoteGenerator() {
         setQuote(json.quote);
         setSpeaker(json.name);
     }
+    
   return (
     <>
         <button onClick={handleClick}>fetch quote</button>
